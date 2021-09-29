@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="calo.css">
+</head>
+<body>
+    <div id="center">
+    <div id="head">OLOLADE CALCULATOR</div>
+    <p id="MyDate"></p>
+    <input type="text"  id="lol" disabled></input>
+
+    <div id="ol">
+        <button onclick="clea()">AC</button>
+        <button onclick="sqrt()">√</button>
+        <button onclick="myslice()">C</button>
+        <button onclick="percen()">%</button>
+        <button onclick="display('+')">+</button>
+    </div>
+    <div>
+        <button onclick="display('1')">1</button>
+        <button onclick="display('2')">2</button>
+        <button onclick="display('3')">3</button>
+        <button onclick="sin()">sin</button>
+        <button onclick="display('-')">-</button>
+    </div>
+    <div>
+        <button onclick="display('4')">4</button>
+        <button onclick="display('5')">5</button>
+        <button onclick="display('6')">6</button>
+        <button onclick="cos()">cos</button>
+        <button onclick="display('/')">/</button>
+    </div>
+
+    <div>
+        <button onclick="display('7')">7</button>
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button onclick="tan()">tan</button>
+        <button onclick="display('*')">*</button>
+    </div>
+
+    <div>
+        <button onclick="display('0')">0</button>
+        <button onclick="display('00')">00</button>
+        <button onclick="display('.')">.</button>
+        <button onclick="solve()">=</button>
+        <button onclick="Exp('exp')">exp</button>
+    </div>
+
+
+    </div>
+
+    <script>
+        var d = new Date();
+		document.getElementById("MyDate").innerHTML = d.toUTCString();
+
+        function display(a)  {
+		document.getElementById("lol").value += a;
+        }
+      
+      function solve(){
+          var b = document.getElementById("lol").value;
+          var c = document.getElementById("lol").value = eval(b);
+          document.getElementById("lol").value = c;
+      }
+      function clea(){
+          document.getElementById("lol").value =("");
+      }
+      function sin(){
+            var f = document.getElementById("lol").value;
+            var e = Math.cos(f * Math.PI / 180);
+            document.getElementById("lol").value=e;
+      }
+
+      function tan(){
+        var f = document.getElementById("lol").value;
+            var e = Math.cos(f * Math.PI / 180);
+            document.getElementById("lol").value=e;
+      }
+        function sqrt(){
+            var f = document.getElementById("lol").value;
+
+			document.getElementById("lol").value = Math.sqrt(f);
+        }
+
+        function percen() {
+			var f = document.getElementById("lol").value;
+			var g = f / 100;
+
+			document.getElementById("lol").value = g;
+		}
+
+        function Exp() {
+			var f = document.getElementById("lol").value;
+		
+			document.getElementById("lol").value = f;
+
+			var g = document.getElementById("lol").value;
+
+			document.getElementById("lol").value = g;
+
+			var h= f**g;
+
+			document.getElementById("lol").value = h;
+		}
+    
+    </script>
+    
+
+</body>
+</html>
